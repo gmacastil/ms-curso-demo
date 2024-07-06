@@ -1,4 +1,4 @@
-package com.lite.interpreter;
+package patrones.lite.interpreter;
 
 public class TerminalExpression implements Expression {
 	String data;

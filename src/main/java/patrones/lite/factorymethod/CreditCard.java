@@ -1,4 +1,4 @@
-package com.lite.factorymethod;
+package patrones.lite.factorymethod;
 
 public class CreditCard implements Payment {
 	@Override

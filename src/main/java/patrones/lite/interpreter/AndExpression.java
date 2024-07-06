@@ -1,4 +1,4 @@
-package com.lite.interpreter;
+package patrones.lite.interpreter;
 
 class AndExpression implements Expression {
 	Expression expr1;

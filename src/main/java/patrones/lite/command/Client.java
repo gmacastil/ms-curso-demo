@@ -1,4 +1,4 @@
-package com.lite.command;
+package patrones.lite.command;
 
 public class Client {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.lite.facade;
+package patrones.lite.facade;
 
 import java.util.ArrayList;
 import java.util.List;

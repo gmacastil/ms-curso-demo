@@ -1,4 +1,4 @@
-package com.lite.composite;
+package patrones.lite.composite;
 
 public class FinancialDepartment implements Department {
 

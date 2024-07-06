@@ -1,4 +1,4 @@
-package com.lite.decorator;
+package patrones.lite.decorator;
 
 
 public class LuxuryCar extends CarDecorator {

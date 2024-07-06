@@ -1,4 +1,4 @@
-package com.lite.interpreter;
+package patrones.lite.interpreter;
 
 public class OrExpression implements Expression {
 	Expression expr1;

@@ -1,4 +1,4 @@
-package com.lite.command;
+package patrones.lite.command;
 
 public class OpenTextFileOperation implements TextFileOperation {
 

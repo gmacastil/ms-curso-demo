@@ -1,4 +1,4 @@
-package com.lite.visitor;
+package patrones.lite.visitor;
 
 public class Motorbike implements Vehicle{
 

@@ -1,4 +1,4 @@
-package com.lite.iterator;
+package patrones.lite.iterator;
 
 public class NameRepository implements Container {
 	public String names[] = { "Robert", "John", "Julie", "Lora" };

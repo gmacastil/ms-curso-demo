@@ -1,4 +1,4 @@
-package com.lite.abstractfactory;
+package patrones.lite.abstractfactory;
 
 public class Pato implements Animal {
 

@@ -1,4 +1,4 @@
-package com.lite.facade;
+package patrones.lite.facade;
 
 public class Cliente {
 	public static void main(String[] args) {

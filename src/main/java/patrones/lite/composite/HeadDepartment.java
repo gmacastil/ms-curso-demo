@@ -1,4 +1,4 @@
-package com.lite.composite;
+package patrones.lite.composite;
 
 import java.util.ArrayList;
 import java.util.List;

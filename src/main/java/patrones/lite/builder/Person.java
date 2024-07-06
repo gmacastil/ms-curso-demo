@@ -1,4 +1,4 @@
-package com.lite.builder;
+package patrones.lite.builder;
 
 public class Person {
 

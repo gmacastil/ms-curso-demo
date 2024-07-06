@@ -1,4 +1,4 @@
-package com.lite.iterator;
+package patrones.lite.iterator;
 
 public interface Iterator {
 	public boolean hasNext();

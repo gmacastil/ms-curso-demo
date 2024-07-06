@@ -1,4 +1,4 @@
-package com.lite.chain;
+package patrones.lite.chain;
 
 public class UsernamePasswordProvider implements AuthenticationProvider{
 

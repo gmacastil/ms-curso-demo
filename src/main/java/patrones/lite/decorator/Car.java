@@ -1,4 +1,4 @@
-package com.lite.decorator;
+package patrones.lite.decorator;
 
 public interface Car {
 	public void assemble();

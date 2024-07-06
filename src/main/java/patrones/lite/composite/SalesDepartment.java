@@ -1,4 +1,4 @@
-package com.lite.composite;
+package patrones.lite.composite;
 
 public class SalesDepartment implements Department {
 

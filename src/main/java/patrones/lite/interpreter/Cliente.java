@@ -1,4 +1,4 @@
-package com.lite.interpreter;
+package patrones.lite.interpreter;
 
 public class Cliente {
 	public static void main(String[] args) {

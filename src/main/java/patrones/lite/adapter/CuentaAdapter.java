@@ -1,4 +1,4 @@
-package com.lite.adapter;
+package patrones.lite.adapter;
 
 public interface CuentaAdapter {
 

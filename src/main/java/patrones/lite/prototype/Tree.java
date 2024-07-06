@@ -1,4 +1,4 @@
-package com.lite.prototype;
+package patrones.lite.prototype;
 
 public abstract class Tree {
 

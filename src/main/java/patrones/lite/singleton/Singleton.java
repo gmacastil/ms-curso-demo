@@ -1,4 +1,4 @@
-package com.lite.singleton;
+package patrones.lite.singleton;
 
 public final class Singleton {
     private static Singleton instance;

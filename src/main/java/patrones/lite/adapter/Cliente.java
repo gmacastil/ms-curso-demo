@@ -1,4 +1,4 @@
-package com.lite.adapter;
+package patrones.lite.adapter;
 
 public class Cliente {
 	public static void main(String[] args) {

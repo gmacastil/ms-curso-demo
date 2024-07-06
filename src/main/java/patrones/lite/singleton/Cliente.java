@@ -1,4 +1,4 @@
-package com.lite.singleton;
+package patrones.lite.singleton;
 
 public class Cliente {
 

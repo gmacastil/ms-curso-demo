@@ -1,4 +1,4 @@
-package com.lite.bridge;
+package patrones.lite.bridge;
 
 public class Red implements Color {
     @Override
