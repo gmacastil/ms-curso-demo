@@ -1,27 +1,28 @@
 package com.lite.ms_curso_demo.infraestructure;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/api/v1")
+@RestController("")
 public class APIController {
 
+    @Value("${app.mensaje}")
+    private String mensaje;
+
+    @Value("${app.factor}")
+    private int factor;
+
+
     @GetMapping("/")
-    public String getHello() {
-        return "Hello World!";
+    public String calcular(int a) {
+        return a * factor + "";
     }
 
-    @PostMapping("/crear")
-    public void create() {
-        System.out.println("Creating a new object");
+    @GetMapping("/hola")
+    public String getMensage() {
+        return mensaje;
     }
-
-    @PutMapping("/update")
-    public void update() {
-        System.out.println("Update a new object");
-    }
-
 
 }
