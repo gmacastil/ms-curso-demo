@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lite.ms_curso_demo.domain.Product;
+
 @RestController("")
 public class APIController {
 
@@ -13,7 +15,6 @@ public class APIController {
 
     @Value("${app.factor}")
     private int factor;
-
 
     @GetMapping("/")
     public String calcular(int a) {
