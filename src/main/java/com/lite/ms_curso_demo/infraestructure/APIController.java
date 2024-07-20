@@ -79,7 +79,8 @@ public class APIController {
     // DELETE es para borrar
     @DeleteMapping("/{id}")
     public Map<String, String> deleteProduct(@PathVariable Long id) {
-        productApplication.deleteById(id);
+        Product product = productApplication.findById(id).orElseThrow(() -> new ProductNotFoundException(id));
+        productApplication.delete(product);
         Map<String, String> response = new HashMap<>();
         response.put("message", "Producto eliminado: " + id);
         return response;
