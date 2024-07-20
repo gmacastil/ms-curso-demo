@@ -1,11 +1,15 @@
 package com.lite.ms_curso_demo.infraestructure;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,6 +58,31 @@ public class APIController {
 
     // PUt es para update
 
+    @PutMapping("/update/{id}")
+    public Product updateProduct(@PathVariable Long id, @RequestBody Product product) {
+
+        Product productToUpdate = productApplication.findById(id).orElseThrow(() -> new ProductNotFoundException(id));
+        productToUpdate.setName(product.getName());
+        productToUpdate.setPrice(product.getPrice());
+        productToUpdate.setStock(product.getStock());
+
+        return productApplication.save(productToUpdate);
+    }
+
+
+    @PutMapping("/update")
+    public Product updateProductv2(@RequestBody Product product) {
+        return productApplication.save(product);
+    }
+
+
     // DELETE es para borrar
-   
+    @DeleteMapping("/{id}")
+    public Map<String, String> deleteProduct(@PathVariable Long id) {
+        productApplication.deleteById(id);
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Producto eliminado: " + id);
+        return response;
+
+    }   
 }
