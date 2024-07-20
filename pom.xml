@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.lite</groupId>
 	<artifactId>ms-curso-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>ms-curso-demo</name>
 	<description>Microservicio demo de la clase</description>
 	<url/>
