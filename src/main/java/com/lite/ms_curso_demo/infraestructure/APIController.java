@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lite.ms_curso_demo.application.ProductApplication;
 import com.lite.ms_curso_demo.domain.Product;
+import com.lite.ms_curso_demo.exception.ProductNotFoundException;
 
 
 
@@ -32,12 +33,16 @@ public class APIController {
 
     @GetMapping("/{id}")
     public Product getProductById(@PathVariable Long id) {
-        return productApplication.findById(id).get();
+        return productApplication.findById(id).orElseThrow(() -> new ProductNotFoundException(id));
     }
 
     @GetMapping("/name")
     public List<Product> getProductsByName(@RequestParam String name) {
-        return productApplication.findByNameContaining(name);
+        List<Product> products = productApplication.findByNameContaining(name);
+        if (products.isEmpty()) {
+            throw new ProductNotFoundException(name);
+        }
+        return products;
     }
 
     // POST es para crear
