@@ -13,7 +13,7 @@ services:
       URL: "jdbc:mysql://mysqlcurso.mysql.database.azure.com:3306/test"
       #PASSWORD: "123456789"
       #USERNAME: "root"
-      PASSWORD: &PASS
+      PASSWORD: "litethinking2024*"
       USERNAME: "curso"
       TZ: "America/Bogota"
   
