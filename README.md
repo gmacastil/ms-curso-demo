@@ -1,26 +1,56 @@
-0. Preparación (opt)
+# Instalar docker Destop o docker engine
 
-Instalar docker Destop o docker engine
-docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+```url
+https://docs.docker.com/desktop/install/windows-install/
+```
 
+## Opcional: Instalar Portainer
 
-1. instalar db
+```sh
+$ docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+```
 
-docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456789 -p 3306:3306 -d mysql:8.4.1
+# Instalar database
 
+Ejecutar un contenedor de DB
 
-create database test;
+```sh
+$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456789 -p 3306:3306 -d mysql:8.4.1
+```
 
+## Crear database test y tabla
 
-2. crear db y tabla
-
-CREATE DATABASE `curso`
-
-CREATE TABLE `product` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `price` float NOT NULL,
-  PRIMARY KEY (`id`)
+```sql
+CREATE DATABASE `test`;
+CREATE TABLE products (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    price FLOAT NOT NULL,
+    stock INT,
+    PRIMARY KEY (id)
 );
+```
 
-3. Model
+
+# Construir imagen
+
+## Compilar codigo
+
+```sh
+$ mvn clean package
+```
+
+## Construir imagen y subir a registry
+
+```sh
+export REGISTRY="nombre del servicio de container registry: dockerhub, azure, aws, etc"
+$ docker build . -t ms-curso-demo:1
+$ docker tag ms-curso-demo:1 REGISTRY/ms-curso-demo:1
+$ docker push REGISTRY/ms-curso-demo:1
+```
+
+## Ajustar nombre de imagen en docker-compose y subir container
+
+```sh
+$ docker compose up -d
+```
