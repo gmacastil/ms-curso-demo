@@ -1,0 +1,26 @@
+services:
+  ms-curso-demo3:
+    #image: 451241043517.dkr.ecr.us-east-1.amazonaws.com/ms-curso-demo:9
+    #image: cursodockerlite.azurecr.io/ms-curso-demo:9
+    image: mauron/curso-demo:9
+
+    container_name: ms-curso-demo3
+    ports:
+      - "9094:8080"
+    restart: always
+    environment:
+      #URL: "jdbc:mysql://container-mysql:3306/test"
+      URL: "jdbc:mysql://mysqlcurso.mysql.database.azure.com:3306/test"
+      #PASSWORD: "123456789"
+      #USERNAME: "root"
+      PASSWORD: &PASS
+      USERNAME: "curso"
+      TZ: "America/Bogota"
+  
+    networks:
+      - micros
+ 
+networks:
+  micros:
+    external:
+      name: micros
